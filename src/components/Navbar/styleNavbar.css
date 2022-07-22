@@ -1,16 +1,61 @@
 /* Navbar */
 
-.container {
-    display: flex;
+header {
     background: #5096B3;
-    border-radius: 6px;    
+    min-height: 70px; /* altura minima para responsive*/
+    border-radius: 6px;
 }
 
-.container a {
-    padding: 10px;
+.containerNavbar {
+    flex: content;
+    display: flex;
+    border: 3px #010101;
+    align-items: center;
+}
+
+.navbar { 
+    display: flex;
+    align-items: center;
+    /* padding-top: 5px; */
+}
+
+.brand {
+    font-size: 28px;
+    text-decoration: none;   
+    color: aliceblue;
+    margin: 5px;
+    display: flex;
+}
+
+
+.box-elements {
+   display: flex;
+   margin: 5px;
+}
+
+
+.nav-link {
+    padding: 5px;
     text-decoration: none;
     color: #040404;
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    font-size: 16px;
+    margin: px;
+} 
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    background: #ffffff;
+    border-radius: 40px;
+    margin: 10px;
+    height: 60px;
+}
+
+@media (max-width:700px) {
+    .navbar {
+        flex-direction: column;
+    }
 }
