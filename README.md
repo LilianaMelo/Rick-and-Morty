@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+En este proyecto se uso 
+react, y react-dom version 17.0.2
+react-paginate: 8.1.3,
+react-router-dom: 6.3.0.
+También se usó la api de Rick and Morty.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -12,11 +12,13 @@ import Episodes from "./components/Pages/Episodes"
 import Location  from "./components/Pages/Location";
 import CardDetails from "./components/Card/CardDetails";
 
+
 import './styles.css';
 import './components/Navbar/styleNavbar.css';
 import './components/Card/styleCardDetail.css';
 import './components/Search/styleSearch.css';
 import './components/Pages/episodes.css'
+
 
 // funcion principal App
 
@@ -31,6 +33,7 @@ function RickMortyApp(){
 
             <Routes>
                 <Route path="/" element={ <Home /> } /> 
+
                 <Route path="/:id" element={ <CardDetails /> } /> 
 
                 <Route path="/episodes" element={ <Episodes /> } />
@@ -38,8 +41,7 @@ function RickMortyApp(){
 
                 <Route path="/location" element={ <Location /> } />
                 <Route path="/location/:id" element={ <CardDetails /> } /> 
-
-                <Route path="*" element={<h1>Not Found - Error.</h1>}/> 
+                
             </Routes>
         </Router>
     );
