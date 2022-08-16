@@ -8,5 +8,5 @@ ReactDOM.render(
   // <BrowserRouter > 
     <RickMortyApp />,
   // </BrowserRouter>,
-   document.getElementById("root") 
+   document.getElementById("root")
 );

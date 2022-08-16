@@ -26,7 +26,7 @@ const CardDetails = () => {
         <div className='containerDetails'>
             <div className='card-Container'>
                 <h1>{name}</h1>
-                <img src={image} className="img-Details"/>
+                <img src={image} alt="" className="img-Details"/>
 
                 {(()=>{
                         if(status === "Dead"){
