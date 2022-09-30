@@ -34,7 +34,7 @@ function RickMortyApp(){
             <Routes>
                 <Route path="/" element={ <Home /> } /> 
 
-                <Route path="/:id" element={ <CardDetails /> } /> 
+                <Route path="/:id" element={ <CardDetails /> } /> {/* /:id es para poder acceder con el id del personaje al detalle del personaje con(useParams) */}
 
                 <Route path="/episodes" element={ <Episodes /> } />
                 <Route path="/episodes/:id" element={ <CardDetails /> } /> 
@@ -95,7 +95,8 @@ const Home = () => {
         // aqui se usa la 3ra. forma.
 
         (async function() {
-            const data = await fetch( initialUrl ).then(res=>res.json());
+            const data = await fetch( initialUrl )
+            .then(res=>res.json());
             // console.log(data);
             updateFetchedData(data); // 
         })();

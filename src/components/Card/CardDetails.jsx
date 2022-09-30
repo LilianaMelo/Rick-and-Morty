@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-const CardDetails = () => {
+const CardDetails = () => { // para un solo personaje o detalle.
 
-    const {id} = useParams();
+    const {id} = useParams(); // es el id del personaje el mismo del api
     const [fetchedData, updateFetcheData ] = useState([]);
     // console.log(fetchedData);
 
-    const {name, image, location, origin, gender, species, status, type, } = fetchedData;
+    const { name, image, location, origin, gender, species, status, type } = fetchedData;
 
     const api = `https://rickandmortyapi.com/api/character/${id}`
 
     useEffect(() => {
         (async function () {
             const data = await fetch(api).then((res ) => res.json());
-            updateFetcheData(data);
+            updateFetcheData(data.data);
         } )();
 
     }, [api]);

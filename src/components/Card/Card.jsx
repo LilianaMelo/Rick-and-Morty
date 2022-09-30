@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 const Card = ({ results, page }) => {
+    // lista de personajes
+
     // console.log(results);
     let display = (""); // se cambia const por let, ya que salia error. let es local const es global
 
@@ -52,9 +54,7 @@ const Card = ({ results, page }) => {
     }
 
     return (
-
         <>{display}</>
-
     )
 }
 
