@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
+// al ejecutarlo se debe eliminar la ruta de rickandmorty para que funcione
 const Card = ({ results, page }) => {
+    // lista de personajes
+
     // console.log(results);
     let display = (""); // se cambia const por let, ya que salia error. let es local const es global
 
     if (results) {
         display = results.map((character) => { // x
-            const {id, name, image, species, status} = character;
+            const {id, name, image, species, status} = character; // aqui la informacion esta dentro de una array [] por eso se usa .map
 
             return(
                 
@@ -52,10 +54,8 @@ const Card = ({ results, page }) => {
     }
 
     return (
-
         <>{display}</>
-
     )
 }
 
-export default Card
+export default Card;

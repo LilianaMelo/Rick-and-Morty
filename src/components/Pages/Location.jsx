@@ -37,7 +37,7 @@ const Location = () => {
                 <h1>Ubicación: {" "} 
                     <span className="colorName">{ name }</span>
                 </h1> 
-                <h5> Dimensión: { dimension}</h5>
+                <h5> Dimensión: { dimension }</h5>
                 <h5> Tipo: { type}</h5>
             </div>
 

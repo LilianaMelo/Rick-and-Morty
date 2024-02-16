@@ -40,7 +40,7 @@ body {
 .card-body {
     margin: 8px;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    min-width: 200px;
+    /* min-width: 200px; */
 }
 
 .badge-insignia-green {

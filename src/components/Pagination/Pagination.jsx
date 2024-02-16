@@ -1,9 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import ReactPaginate from "react-paginate";
+import RickMortyApp from '../../RickMortyApp';
 
 
 const Pagination = ({ info, pageNumber, setPageNumber }) => {
+  console.log(info);
+  console.log(pageNumber);
+  // console.log(setPageNumber);
 
   // funcion para traer u obtener los datos de las paginas y que los botones funcionen correctamente.
   const pageChange = (data) => {

@@ -8,24 +8,22 @@ import Pagination from "./components/Pagination/Pagination";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Episodes from "./components/Pages/Episodes"
+import Episodes from "./components/Pages/Episodes";
 import Location  from "./components/Pages/Location";
 import CardDetails from "./components/Card/CardDetails";
-
 
 import './styles.css';
 import './components/Navbar/styleNavbar.css';
 import './components/Card/styleCardDetail.css';
 import './components/Search/styleSearch.css';
-import './components/Pages/episodes.css'
+import './components/Pages/episodes.css';
 
-
+// npm install react-router-dom
 // funcion principal App
-
 function RickMortyApp(){
 
     return(
-        <Router>
+        <Router> {/* en la ultima actualizacion no es necesario poner el primer router */}
 
             <div className="App">
                 <Navbar />
@@ -34,7 +32,7 @@ function RickMortyApp(){
             <Routes>
                 <Route path="/" element={ <Home /> } /> 
 
-                <Route path="/:id" element={ <CardDetails /> } /> 
+                <Route path="/:id" element={ <CardDetails /> } /> {/* /:id es para poder acceder con el id del personaje al detalle del personaje con(useParams) */}
 
                 <Route path="/episodes" element={ <Episodes /> } />
                 <Route path="/episodes/:id" element={ <CardDetails /> } /> 
@@ -54,13 +52,14 @@ const Home = () => {
 
     // console.log(pageNumber);
 
-    // este es para la busqueda.
+    // esta constantente es solo para la busqueda.
     const [search, setSearch] = useState(""); // Smith
 
     // este es el estado para traer la informacion de la api
-    const [ fetchedData, updateFetchedData ] = useState([]);
+    const [ fetchedData, updateFetchedData ] = useState([]); 
 
-    const { info, results } = fetchedData; // desestructuracion
+    const { info, results } = fetchedData; // desestructuracion.
+    // console.log(info.pages);
     
     // info pasara al componente de Pagination.
     // result pasara al componente de Card - personajes.
@@ -77,16 +76,13 @@ const Home = () => {
     //             setCharacters(data.results);
     //             //setInfo(data.info);
     //             //setSearch(data.results);
-                
     //         })
-
     //         //  .then(data => console.log(data.results))
     //         .catch(error => console.log(error))
     // };
 
 
     useEffect(() => {
-
         // tres funciones ::
         // 1. function abc() {} // se ejecuta escribiendo abc();
         // 2. const adcdfg = () => {}
@@ -95,21 +91,19 @@ const Home = () => {
         // aqui se usa la 3ra. forma.
 
         (async function() {
-            const data = await fetch( initialUrl ).then(res=>res.json());
-            // console.log(data);
+            const data = await fetch( initialUrl )
+            .then(res=>res.json());
+            // console.log(data.info.pages);
             updateFetchedData(data); // 
         })();
-
         // fetchCharacters( initialUrl); // se ejecuta una sola vez
-
     }, [initialUrl]) // initialUrl : cada vez que la api cambia quiero buscar nuevos datos en la api dentro del useEffect
 
     return (
 
         <>
             <div className="RickMortyApp">
-
-            <h1 className="titleEpi">Personajes</h1> 
+                <h1 className="titleEpi">Personajes</h1> 
 
                 <Search 
                     setSearch={setSearch} 
