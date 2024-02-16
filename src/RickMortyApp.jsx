@@ -93,7 +93,8 @@ const Home = () => {
         (async function() {
             const data = await fetch( initialUrl )
             .then(res=>res.json());
-            // console.log(data.info.pages);
+
+            // console.log(data);
             updateFetchedData(data); // 
         })();
         // fetchCharacters( initialUrl); // se ejecuta una sola vez

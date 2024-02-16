@@ -10,13 +10,13 @@ const CardDetails = () => { // para un solo personaje o detalle.
 
     const { name, image, location, origin, gender, species, status, type } = fetchedData;  // aqui la informacion esta dentro de una array [] por eso se usa .map
 
+
     const api = `https://rickandmortyapi.com/api/character/${id}`
 
     useEffect(() => {
         (async function () {
             const data = await fetch(api).then((res ) => res.json());
             updateFetcheData(data); // aqui presenta error con data.data
-        
         })();
 
     }, [api]);
