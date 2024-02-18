@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import ReactPaginate from "react-paginate";
-import RickMortyApp from '../../RickMortyApp';
 
 
 const Pagination = ({ info, pageNumber, setPageNumber }) => {
