@@ -1,0 +1,36 @@
+name: rick-and-morty
+
+on:
+  push:
+    branches: [ main ]
+
+# jobs: conjunto de pasos para que cada uno haga una tarea concreta.
+jobs:
+  build:
+    # maquina vistual donde se va a generar el proyecto en github
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+  
+
+    steps: 
+      - name: Ckeckout repositorio
+        uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.11'
+
+      - name: run script
+        run: node ./src/RickMortyApp.jsx
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with: 
+          commit_message: actualizar repositorio
+          commit_user_name: LilianaMelo [GitHub Actions]
+          commit_user_email: lili.melo720@gmail.com
+          commit_author: lilianamz
+          
